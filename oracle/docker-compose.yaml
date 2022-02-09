@@ -6,7 +6,7 @@ networks:
 
 services:
   craftgame_jupyter:
-    build: ./
+    build: ../
     image: craftgame_jupyter
     container_name: oraclenet-craftgame-container
     deploy:
