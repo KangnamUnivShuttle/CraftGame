@@ -1,0 +1,23 @@
+version: '3'
+
+networks:
+  infra_kwsnet:
+    external: true
+
+services:
+  craftgame_jupyter:
+    build: ../
+    image: craftgame_jupyter
+    container_name: kwsnet-craftgame-container
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2048M
+    restart: always
+    env_file:
+      - ./.env
+    networks:
+      - infra_kwsnet
+    volumes:
+      - ../notebook:/home/jovyan/notebook
