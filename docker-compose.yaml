@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  craftgame_jupyter:
+    build: ./
+    image: craftgame_jupyter
+    container_name: craftgame-container
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2048M
+    restart: always
+    ports:
+      - 18888:8888
+    env_file:
+      - ./.env
+    volumes:
+      - ./notebook:/home/jovyan/notebook
