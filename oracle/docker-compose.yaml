@@ -21,3 +21,6 @@ services:
       - infra_oraclenet
     volumes:
       - ../notebook:/home/jovyan/notebook
+    user: root
+    environment:
+        GRANT_SUDO: "yes"
