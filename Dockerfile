@@ -1,5 +1,5 @@
 FROM jupyter/base-notebook:notebook-6.4.8
-
+USER root
 RUN sudo apt-get update
 RUN pip3 install ipycanvas==0.10.2
 
