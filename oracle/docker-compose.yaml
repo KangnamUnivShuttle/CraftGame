@@ -1,7 +1,7 @@
 version: '3'
 
 networks:
-  infra_oraclenet:
+  oracle_oraclenet:
     external: true
 
 services:
@@ -18,7 +18,7 @@ services:
     env_file:
       - ./.env
     networks:
-      - infra_oraclenet
+      - oracle_oraclenet
     volumes:
       - ../notebook:/home/jovyan/notebook
     user: root
