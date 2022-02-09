@@ -1,0 +1,23 @@
+version: '3'
+
+networks:
+  infra_oraclenet:
+    external: true
+
+services:
+  craftgame_jupyter:
+    build: ./
+    image: craftgame_jupyter
+    container_name: oraclenet-craftgame-container
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2048M
+    restart: always
+    env_file:
+      - ./.env
+    networks:
+      - infra_oraclenet
+    volumes:
+      - ../notebook:/home/jovyan/notebook
