@@ -1,0 +1,2 @@
+# CraftGame
+Simple ipycanvas game
